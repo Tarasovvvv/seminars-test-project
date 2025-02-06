@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
-import { Seminar, DeleteModal, EditModal } from "components/index";
+import { Loader, Seminar, DeleteModal, EditModal } from "components/index";
 import { ISeminar, Nullable } from "types/index";
 import { seminarApi } from "api/index";
-import "src/App.scss";
+import styles from "src/App.module.scss";
 
 function App() {
   const [seminars, setSeminars] = useState<Nullable<ISeminar[]>>(null);
@@ -20,17 +20,16 @@ function App() {
         setIsLoading(false);
       }
     };
-    setIsLoading(true);
     fetchData();
   }, []);
 
   return (
-    <div className="wrapper">
+    <div className={styles.wrapper}>
       <header>
         <h1>Онлайн семинары</h1>
       </header>
-      <main></main>
-      <footer>
+      <main>{isLoading && <Loader />}</main>
+      <footer className={styles.footer}>
         <p style={{ margin: 5, textTransform: "uppercase", fontWeight: 500 }}>Организация</p>
         <a href="">О нас</a>
         <a href="">Контакты</a>

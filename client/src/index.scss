@@ -29,13 +29,3 @@ main {
   place-content: center;
   align-items: center;
 }
-
-footer {
-  @include flex($isColumn: true, $isCenter: true);
-}
-
-.wrapper {
-  @include flex($isColumn: true);
-
-  min-height: 100vh;
-}

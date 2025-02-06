@@ -1,0 +1,13 @@
+@use "partials" as *;
+
+.wrapper {
+  @include flex($isColumn: true);
+
+  min-height: 100vh;
+}
+
+.footer {
+  @include flex($isColumn: true, $isCenter: true);
+
+  margin: 1em;
+}
