@@ -1,0 +1,41 @@
+@use "partials" as *;
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+
+  color-scheme: light dark;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  @include flex($isCenter: true);
+
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+a {
+  color: #777777;
+  text-decoration: inherit;
+}
+
+main {
+  flex-grow: 1;
+  place-content: center;
+  align-items: center;
+}
+
+footer {
+  @include flex($isColumn: true, $isCenter: true);
+}
+
+.wrapper {
+  @include flex($isColumn: true);
+
+  min-height: 100vh;
+}

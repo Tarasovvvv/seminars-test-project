@@ -1,0 +1,44 @@
+@use "sass:math";
+@use "variables" as *;
+
+/**
+ * Генерирует адаптивный размер шрифта в зависимости от ширины экрана.
+ * 
+ * @mixin fluid-text
+ * @param {number} $max - Максимальный размер шрифта в пикселях (по умолчанию: 48px).
+ * @param {number} $min - Минимальный размер шрифта в пикселях (по умолчанию: 16px).
+ * 
+ * Формула использует `clamp()`, чтобы текст плавно изменялся между $min и $max
+ * в зависимости от ширины экрана (от 390px до 1920px).
+ */
+@mixin fluid-text($max: 48, $min: 16) {
+  $maxSize: math.div($max, 16);
+  $minSize: math.div($min, 16);
+  $maxWidth: math.div($maxViewportWidth, 16);
+  $minWidth: math.div($minViewportWidth, 16);
+
+  $slope: math.div(($maxSize - $minSize), ($maxWidth - $minWidth));
+  $yAxisIntersection: -$minWidth * $slope + $minSize;
+
+  font-size: clamp(#{$minSize * 1rem}, #{$yAxisIntersection * 1rem} + #{$slope * 100vw}, #{$maxSize * 1rem});
+}
+
+/**
+ * Универсальный SCSS-миксин для работы с flex-контейнерами.
+ *
+ * @mixin flex
+ * @param {Boolean} $isColumn - Если `true`, устанавливает `flex-direction: column;`.
+ * @param {Boolean} $isCenter - Если `true`, выравнивает контент и элементы по центру (`place-content: center; align-items: center;`).
+ */
+@mixin flex($isColumn: false, $isCenter: false) {
+  display: flex;
+
+  @if $isColumn {
+    flex-direction: column;
+  }
+
+  @if $isCenter {
+    place-content: center;
+    align-items: center;
+  }
+}
