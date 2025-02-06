@@ -1,11 +1,9 @@
 import { useState } from "react";
-import { Seminar, ModalDelete, ModalEdit } from "@components/index";
-import "@/App.scss";
-
-const SEMINAR_API_URL: string = "http://localhost:3000/seminars";
+import { ISeminar, Nullable } from "types/index";
+import "src/App.scss";
 
 function App() {
-  const [count, setCount] = useState(0);
+  const [seminars, setSeminars] = useState<Nullable<ISeminar[]>>(null);
 
   return (
     <div className="wrapper">

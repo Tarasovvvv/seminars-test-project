@@ -1,4 +1,4 @@
 /* Файл для реэкспорта компонент */
-export { default as Seminar } from "./Seminar/Seminar.tsx";
-export { default as ModalDelete } from "./Modal/ModalDelete.tsx";
-export { default as ModalEdit } from "./Modal/ModalEdit.tsx";
+export { default as Seminar } from "./Seminar/Seminar";
+export { default as DeleteModal } from "./Modal/DeleteModal";
+export { default as EditModal } from "./Modal/EditModal";
