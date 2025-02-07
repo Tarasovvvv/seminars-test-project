@@ -1,0 +1,72 @@
+@use "partials" as *;
+
+.content {
+  @include flex($isColumn: true);
+
+  padding: 1em;
+  flex-grow: 1;
+  justify-content: space-between;
+}
+
+.datatime {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.875rem;
+  color: #999;
+
+  @include dark {
+    color: #929292;
+  }
+}
+
+.actions {
+  display: flex;
+  gap: 1em;
+
+  height: fit-content;
+  justify-content: end;
+}
+
+.editButton,
+.deleteButton {
+  padding: 0.4em;
+  border-radius: 0.3em;
+  background-color: white;
+  transition: background-color 0.2s ease;
+
+  &:hover {
+    background-color: rgb(243, 243, 243);
+  }
+
+  @include dark {
+    background-color: rgb(19, 19, 19);
+
+    &:hover {
+      background-color: rgb(51, 51, 51);
+    }
+  }
+}
+
+.editButton {
+  color: rgb(61, 61, 61);
+
+  &:hover {
+    color: rgb(0, 0, 0);
+  }
+
+  @include dark {
+    color: rgb(201, 201, 201);
+
+    &:hover {
+      color: rgb(255, 255, 255);
+    }
+  }
+}
+
+.deleteButton {
+  color: #e74c3c;
+
+  &:hover {
+    color: #ff1900;
+  }
+}

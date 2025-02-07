@@ -29,3 +29,37 @@
 - Используйте современные подходы (например, React Hooks, функциональные компоненты).
 - Обратите внимание на обработку ошибок и состояния загрузки.
 - Добавьте комментарии в код для пояснения ключевых моментов реализации.
+
+![alt text](https://github.com/user-attachments/assets/d5bb1233-807c-4c7e-9a26-5e1ce6dee7b2)
+
+![alt text](https://github.com/user-attachments/assets/aef30131-11b2-41e5-a1c1-d71ad8a4221e)
+
+![alt text](https://github.com/user-attachments/assets/1c4cf103-8c5e-45b6-9031-9ba71f5444dd)
+
+# Запуск
+
+## Скачайте проект:
+
+`git clone Tarasovvvv/seminars-test-project.git`
+
+## Перейдите в папку проекта, откуда введите(у вас должен быть установлен [npm](https://www.npmjs.com)):
+
+`cd .\client\`
+
+`npm i`
+
+`cd ..\server\`
+
+`npm i`
+
+## Для запуска сервера из корня проекта:
+
+`cd .\server\`
+
+`npm run start`
+
+## Для запуска клиента из корня проекта:
+
+`cd .\client\`
+
+`npm run dev`

@@ -1,0 +1,28 @@
+@use "sass:math";
+
+/**
+ * Универсальный SCSS-миксин для работы с flex-контейнерами.
+ *
+ * @mixin flex
+ * @param {Boolean} $isColumn - Если `true`, устанавливает `flex-direction: column;`.
+ * @param {Boolean} $isCenter - Если `true`, выравнивает контент и элементы по центру (`place-content: center; align-items: center;`).
+ */
+@mixin flex($isColumn: false, $isCenter: false) {
+  display: flex;
+
+  @if $isColumn {
+    flex-direction: column;
+  }
+
+  @if $isCenter {
+    place-content: center;
+    align-items: center;
+  }
+}
+
+// Если выбрана темная тема в системе(для светлой все определенно по умолчанию)
+@mixin dark {
+  @media (prefers-color-scheme: dark) {
+    @content;
+  }
+}

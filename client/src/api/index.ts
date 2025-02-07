@@ -1,0 +1,1 @@
+export { seminarApi } from "./SeminarApi";

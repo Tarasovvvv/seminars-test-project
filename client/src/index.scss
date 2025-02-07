@@ -1,0 +1,158 @@
+@use "partials" as *;
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+
+  color-scheme: light dark;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  @include flex($isCenter: true);
+
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+main {
+  @include flex($isCenter: true, $isColumn: true);
+
+  flex-grow: 1;
+}
+
+h1 {
+  text-align: center;
+}
+
+h2 {
+  font-size: 1.5rem;
+  margin: 0 0 0.5em;
+  color: rgb(43, 43, 43);
+
+  @include dark {
+    color: rgb(248, 248, 248);
+  }
+}
+
+p {
+  font-size: 1rem;
+  margin: 0 0 1em;
+  color: #666;
+  line-height: 1.4;
+
+  @include dark {
+    color: #ddd;
+  }
+}
+
+article {
+  @include flex();
+
+  border: 1px solid #ddd;
+  border-radius: 0.5em;
+  overflow: hidden;
+  transition: box-shadow 0.3s ease;
+  width: 50em;
+  margin: 1em;
+
+  &:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+
+  @include dark {
+    border: 1px solid #3a3a3a;
+
+    &:hover {
+      box-shadow: 0 4px 12px rgba(255, 255, 255, 0.15);
+    }
+  }
+}
+
+img {
+  width: 16em;
+}
+
+button {
+  padding: 0;
+  margin: 0;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+form {
+  @include flex($isColumn: true);
+
+  gap: 1em;
+
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  padding: 1.5em;
+  border-radius: 1em;
+  background-color: white;
+
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+
+  opacity: 0;
+  animation: spawn 0.2s linear forwards;
+
+  @keyframes spawn {
+    to {
+      opacity: 1;
+    }
+  }
+
+  @include dark {
+    background-color: #272727;
+
+    box-shadow: 0 4px 12px rgb(0, 0, 0);
+  }
+}
+
+label {
+  @include flex($isColumn: true);
+
+  font: inherit;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+input,
+textarea {
+  font: inherit;
+  font-weight: 400;
+
+  border: 1px solid #999999;
+  border-radius: 0.3em;
+  padding: 0.5em;
+
+  &:focus {
+    border-color: black;
+    outline: none;
+  }
+
+  @include dark {
+    border: 1px solid #4b4b4b;
+
+    &:focus {
+      border-color: rgb(255, 255, 255);
+      outline: none;
+    }
+  }
+}
+
+textarea {
+  resize: none;
+  height: 5em;
+}
