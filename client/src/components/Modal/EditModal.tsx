@@ -28,6 +28,7 @@ function EditModal({ isOpen, seminar, onClose, onSave }: IEditModalProps) {
     isOpen &&
     createPortal(
       <form onSubmit={handleSubmit(onSave)} className={styles.form}>
+        <h2>Редактирование</h2>
         <label>
           Название
           <input
