@@ -19,13 +19,56 @@ body {
   min-height: 100vh;
 }
 
+main {
+  flex-grow: 1;
+  place-content: center;
+  align-items: center;
+}
+
+h1 {
+  text-align: center;
+}
+
+h2 {
+  font-size: 1.5rem;
+  margin: 0 0 0.5em;
+  color: #333333;
+}
+
 a {
   color: #777777;
   text-decoration: inherit;
 }
 
-main {
-  flex-grow: 1;
-  place-content: center;
-  align-items: center;
+p {
+  font-size: 1rem;
+  margin: 0 0 1em;
+  color: #666;
+  line-height: 1.4;
+}
+
+article {
+  @include flex();
+
+  border: 1px solid #ddd;
+  border-radius: 0.5em;
+  overflow: hidden;
+  transition: box-shadow 0.3s ease;
+  width: 50em;
+  margin: 1em;
+
+  &:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+}
+
+img {
+  width: 16em;
+}
+
+button {
+  padding: 0;
+  margin: 0;
+  border: none;
+  cursor: pointer;
 }

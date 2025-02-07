@@ -9,6 +9,7 @@ export default defineConfig({
       src: "/src",
       api: "/src/api",
       types: "/src/types",
+      partials: "/src/partials",
       components: "/src/components",
     },
   },

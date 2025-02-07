@@ -8,6 +8,8 @@ function App() {
   const [seminars, setSeminars] = useState<Nullable<ISeminar[]>>(null);
   const [error, setError] = useState<Nullable<string>>(null);
   const [isLoading, setIsLoading] = useState<boolean>(true);
+  const [editable, setEditable] = useState<Nullable<number>>(null);
+  const [deletable, setDeletable] = useState<Nullable<number>>(null);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -28,12 +30,12 @@ function App() {
       <header>
         <h1>Онлайн семинары</h1>
       </header>
-      <main>{isLoading && <Loader />}</main>
-      <footer className={styles.footer}>
-        <p style={{ margin: 5, textTransform: "uppercase", fontWeight: 500 }}>Организация</p>
-        <a href="">О нас</a>
-        <a href="">Контакты</a>
-      </footer>
+      <main>
+        {(editable && <EditModal />) || (deletable && <DeleteModal />)}
+        {(isLoading && <Loader />) ||
+          (error && <p style={{ textAlign: "center" }}>{error}</p>) ||
+          seminars?.map((item) => <Seminar key={item.id} seminar={item} onEdit={() => setEditable(item.id)} onDelete={() => setDeletable(item.id)} />)}
+      </main>
     </div>
   );
 }
