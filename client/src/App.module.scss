@@ -24,3 +24,12 @@
     }
   }
 }
+
+@media (prefers-color-scheme: dark) {
+  .reloadButton {
+    color: #eee;
+  }
+  p {
+    color: #ffffff;
+  }
+}

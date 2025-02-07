@@ -19,3 +19,10 @@
     align-items: center;
   }
 }
+
+// Если выбрана темная тема в системе(для светлой все определенно по умолчанию)
+@mixin dark {
+  @media (prefers-color-scheme: dark) {
+    @content;
+  }
+}
