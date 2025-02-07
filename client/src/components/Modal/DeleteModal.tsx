@@ -1,6 +1,5 @@
 function DeleteModal() {
-    return <></>;
-  }
-  
-  export default DeleteModal;
-  
+  return <></>;
+}
+
+export default DeleteModal;

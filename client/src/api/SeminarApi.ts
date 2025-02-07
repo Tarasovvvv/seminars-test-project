@@ -25,7 +25,7 @@ class SeminarApi {
   }
 
   async patchSeminar(seminar: ISeminar) {
-    return this.instance.patch<Nullable<ISeminar>>(`seminars/${seminar.id}`, seminar);
+    return this.instance.patch<Nullable<ISeminar>>(`/seminars/${seminar.id}`, seminar);
   }
 
   async deleteSeminar(id: number) {

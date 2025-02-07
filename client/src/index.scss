@@ -1,4 +1,7 @@
 @use "partials" as *;
+* {
+  box-sizing: border-box;
+}
 
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
@@ -20,9 +23,9 @@ body {
 }
 
 main {
+  @include flex($isCenter: true, $isColumn: true);
+
   flex-grow: 1;
-  place-content: center;
-  align-items: center;
 }
 
 h1 {
@@ -70,5 +73,60 @@ button {
   padding: 0;
   margin: 0;
   border: none;
+  background-color: transparent;
   cursor: pointer;
+}
+
+form {
+  @include flex($isColumn: true);
+
+  gap: 1em;
+
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  padding: 1.5em;
+  border-radius: 1em;
+  background-color: white;
+
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+
+  opacity: 0;
+  animation: spawn 0.2s linear forwards;
+
+  @keyframes spawn {
+    to {
+      opacity: 1;
+    }
+  }
+}
+
+label {
+  @include flex($isColumn: true);
+
+  font: inherit;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+input,
+textarea {
+  font: inherit;
+  font-weight: 400;
+
+  border: 1px solid #999999;
+  border-radius: 0.3em;
+  padding: 0.5em;
+
+  &:focus {
+    border-color: black;
+    outline: none;
+  }
+}
+
+textarea {
+  resize: none;
+  height: 5em;
 }
