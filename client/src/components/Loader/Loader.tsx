@@ -1,6 +1,6 @@
 import styles from "./Loader.module.scss";
 
-/* Компонент для отображения во время состояния загрузки(лоадер) */
+// Компонент для отображения во время состояния загрузки(лоадер)
 function Loader() {
   return (
     <div className={styles.loader}>
