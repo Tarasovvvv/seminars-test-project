@@ -29,7 +29,7 @@ class SeminarApi {
   }
 
   async deleteSeminar(id: number) {
-    return this.instance.delete(`seminars/${id}`);
+    return this.instance.delete<Nullable<{}>>(`seminars/${id}`);
   }
 }
 

@@ -1,7 +1,7 @@
 import { useForm } from "react-hook-form";
 import { createPortal } from "react-dom";
 import clsx from "clsx";
-import styles from "./EditModal.module.scss";
+import styles from "./Modal.module.scss";
 import { ISeminar } from "src/types";
 
 interface IEditModalProps {
@@ -13,6 +13,7 @@ interface IEditModalProps {
 
 const modalRoot = document.getElementById("modal-root") || document.body;
 
+// Модалка для редактирования
 function EditModal({ isOpen, seminar, onClose, onSave }: IEditModalProps) {
   const {
     register,

@@ -46,6 +46,19 @@ function App() {
     }
   };
 
+  const handleDeleteSeminar = async (id: number): Promise<void> => {
+    if (!seminars) return;
+    try {
+      const reposnse = await seminarApi.deleteSeminar(id);
+      const deletedSeminar: Nullable<{}> = reposnse.data;
+      if (deletedSeminar) {
+        setSeminars((prevSeminars) => prevSeminars!.filter((seminar) => seminar.id !== deletableId));
+      }
+    } catch (error) {
+      setError("Ошибка при редактировании");
+    }
+  };
+
   useEffect(() => {
     reload();
   }, []);
@@ -70,7 +83,17 @@ function App() {
               }}
             />
           )) ||
-            (deletableId && <DeleteModal />)
+            (deletableId && (
+              <DeleteModal
+                isOpen={deletableId !== null}
+                onClose={() => setDeletableId(null)}
+                onDelete={() => {
+                  handleDeleteSeminar(deletableId);
+                  setDeletableId(null);
+                  reload();
+                }}
+              />
+            ))
         }
         {
           // Контентная часть
