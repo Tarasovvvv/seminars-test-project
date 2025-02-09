@@ -1,5 +1,6 @@
 /* Файл для реэкспорта компонент */
 export { default as Edit } from "./Icons/Edit";
+export { default as Error } from "./Error/Error";
 export { default as Reload } from "./Icons/Reload";
 export { default as Delete } from "./Icons/Delete";
 export { default as Loader } from "./Loader/Loader";

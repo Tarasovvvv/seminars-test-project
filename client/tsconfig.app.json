@@ -26,6 +26,7 @@
       "src/*": ["./*"],
       "api/*": ["api/*"],
       "types/*": ["types/*"],
+      "stores/*": ["stores/*"],
       "partials/*": ["partials/*"],
       "components/*": ["components/*"]
     }

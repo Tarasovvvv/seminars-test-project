@@ -1,0 +1,23 @@
+@use "partials" as *;
+.reloadButton {
+  display: flex;
+  color: #111;
+  width: 2em;
+  height: 2em;
+  align-self: center;
+
+  &:hover svg {
+    transition: 0.3s;
+    animation: reload 2s linear infinite;
+
+    @keyframes reload {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+  }
+
+  @include dark {
+    color: #eee;
+  }
+}
